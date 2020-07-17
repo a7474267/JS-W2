@@ -1,13 +1,16 @@
+var token='N5ERqKLM3uKPpFcBeuQLTVF3JlsjT6YFvxC5e9fSKK3IN7QNeRie3f0x3Y7M'
+axios.defaults.headers['Authorization'] = `Bearer ${token}`;
+
+
 var obj = {
   data: {
     uuid: 'c7149c74-55bd-4358-90a9-1a5c0b1f88be',
-    token: 'N5ERqKLM3uKPpFcBeuQLTVF3JlsjT6YFvxC5e9fSKK3IN7QNeRie3f0x3Y7M',//驗證碼，不是固定數值
     products: [],
   },
   getData: function () {
     var vm = this;
     var url = `https://course-ec-api.hexschool.io/api/${this.data.uuid}/ec/products`;
-    var deleteUrl = `https://course-ec-api.hexschool.io/api/${this.data.uuid}/admin/ec/product/9KRpOSat8rwOf9Frd6YkVRn4VBr2ro9uHTfEkUlw9hXoICDZrmCXkbwBBAT26GWY`;
+    var deleteUrl = `https://course-ec-api.hexschool.io/api/${this.data.uuid}/admin/ec/product/oPTzv7joFDBgE06bEigWCHJDsjObVVYDJUWMoruCQJRYTfL5NlksHqD1F4bxWGGA`;
     axios.get(url)
       .then(function (response) {
         vm.data.products = response.data.data;
